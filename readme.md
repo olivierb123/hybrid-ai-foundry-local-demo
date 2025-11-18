@@ -6,7 +6,7 @@ This repository contains a minimal example demonstrating how to build a **hybrid
 - **Agent Framework** (tool routing and orchestration)
 - **Foundry Local** (local GPU inference)
 
-The example shows how a cloud-hosted agent can safely call a **local tool** to process sensitive data—such as medical lab reports—**without sending any raw PHI/PII to the cloud**. Only a structured JSON summary produced locally on the user’s machine is passed to the cloud agent.
+The example shows how a local agent can safely leverage a **local tool** to process sensitive data—such as medical lab reports—**without sending any raw PHI/PII to the cloud**. Only a structured JSON summary produced locally on the user’s machine is passed to the cloud model.
 
 ---
 
@@ -60,10 +60,10 @@ python src/hybrid_symptom_checker.py
 
 The script will:
 
-1. Send the user’s case and raw lab report to the cloud agent  
+1. Send the user’s case and raw lab report to the cloud model  
 2. The agent detects lab data and calls the **local summarization tool**  
 3. Foundry Local runs inference on your GPU  
-4. The cloud agent uses the structured JSON summary to generate final guidance  
+4. The agent uses the structured JSON summary to generate final guidance obtained from the cloud hosted model
 
 ---
 
